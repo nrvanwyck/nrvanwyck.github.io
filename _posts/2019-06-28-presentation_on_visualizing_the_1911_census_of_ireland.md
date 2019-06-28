@@ -17,4 +17,4 @@ comments: true
 
 ## Age and Illiteracy in Northern Ireland
 
-![alt text](Age_and_Illiteracy_Mourne_Ballinamallard_Slemish "Age and Illiteracy near Mourne, Ballinamallard, and Slemish")
+![alt text](Age_and_Illiteracy_Mourne_Ballinamallard_Slemish.png "Age and Illiteracy near Mourne, Ballinamallard, and Slemish")
