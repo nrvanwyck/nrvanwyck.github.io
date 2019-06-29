@@ -8,7 +8,7 @@ tags: [test]
 comments: true
 ---
 
-The National Archives of Ireland has made both the 1901 and 1911 Census of Ireland publically available on their [website](http://www.census.nationalarchives.ie/).  In both censuses, each household return is indexed by townland or street.  By combining census data with townland boundary data avilable on [townlands.ie](https://www.townlands.ie/), we can create maps that can help us visualize the 1901 and 1911 censuses.
+The National Archives of Ireland has made both the 1901 and 1911 Census of Ireland publicly available on their [website](http://www.census.nationalarchives.ie/).  In both censuses, each household return is indexed by townland or street.  By combining census data with townland boundary data available on [townlands.ie](https://www.townlands.ie/), we can create maps that can help us visualize the 1901 and 1911 censuses.
 
 ## Getting Census Data for a Particular Region
 
@@ -99,7 +99,7 @@ In order to integrate the census data and the townland boundary data, we have to
 
 
 
-![alt text](Age_and_Illiteracy_Mourne_Ballinamallard_Slemish.png "Age and Illiteracy near Mourne, Ballinamallard, and Slemish")
+![alt text](Northern_Ireland_1911_Percentage_of_Adult_Illiteracy_gif.gif "Percentage of Adult Illiteracy gif")
 
 
 
