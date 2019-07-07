@@ -14,7 +14,7 @@ The National Archives of Ireland has made both the 1901 and 1911 Census of Irela
 
 The census website has a webpage for each household return.  Here is an [example](http://www.census.nationalarchives.ie/pages/1901/Down/Kilkeel/Aughnahoory/1234778/):
 
-![alt text](img/Household_Return.png "Household Return")
+![alt text](/img/Household_Return.png "Household Return")
 
 This household return is indexed by house number (1), townland or street (Aughnahoory), district electoral division or DED (Kilkeel), county (Down), and year (1901).  Each household return contains information on all of the residents in a particular household in a particular townland or street.
 
@@ -86,7 +86,7 @@ To standardize spelling across the two censuses, I manually cleaned the DED and 
 
 Each townland has its own webpage on townlands.ie; here is [an example](https://www.townlands.ie/down/mourne/kilkeel/aughnahoory/):
 
-![alt text](img/Townland_Example.png "Townland Example")
+![alt text](/img/Townland_Example.png "Townland Example")
 
 Boundary data for every townland on townlands.ie can be downloaded directly from the site's [download page](https://www.townlands.ie/page/download/).  From this collection of townland boundary data, I created a [GeoJSON file](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/townland_boundaries_from_townlands_ie.geojson) that contains only the boundary data for each townland in the forty-five DEDs listed above.
 
@@ -122,6 +122,6 @@ The percentage of the population who identified as Catholic is also positively c
 
 [The notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Mapping%201911%20Census%20of%20Ireland%20with%20Boundary%20Data%20from%20townlands.ie.ipynb) shows how to create visualizations of this demographic information with [Folium](https://github.com/python-visualization/folium) choropleth maps.  We can see that the correlation between age and illiteracy and the correlations between religion and illiteracy are most pronounced in the area around the Mourne Mountains in County Down, and least pronounced in the area around Mount Slemish in County Antrim:
 
-![alt text](img/Northern_Ireland_1911_Percentage_of_Adult_Illiteracy_gif.gif "Percentage of Adult Illiteracy gif")
+![alt text](/img/Northern_Ireland_1911_Percentage_of_Adult_Illiteracy_gif.gif "Percentage of Adult Illiteracy gif")
 
 All of this just scratches the surface of how we might use townland boundary data to visualize the 1901 and 1911 censuses of Ireland.  In the future, I would like to use maps to visualize differences in surnames across different regions, and I would like to add more interactive features to the maps.  But that's all for now!
