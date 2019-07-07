@@ -8,7 +8,7 @@ tags: [test]
 comments: true
 ---
 
-The National Archives of Ireland has made both the 1901 and 1911 Census of Ireland publicly available on their [website](http://www.census.nationalarchives.ie/).  In both censuses, each household return is indexed by townland or street.  By combining census data with townland boundary data available on [townlands.ie](https://www.townlands.ie/), we can create maps that can help us visualize the 1901 and 1911 censuses.
+The National Archives of Ireland has made both the 1901 and 1911 Census of Ireland publicly available on their [website](http://www.census.nationalarchives.ie/).  In both censuses, each household return is indexed by townland or street.  By combining census data with townland boundary data available on [townlands.ie](https://www.townlands.ie/), we can create maps that can help us visualize the censuses.
 
 ## Getting Census Data for a Particular Region
 
@@ -16,13 +16,15 @@ The census website has a webpage for each household return.  Here is an [example
 
 ![alt text](Household_Return.png "Household Return")
 
-This household return is indexed by house number (1), townland or street (Aughnahoory), district electoral division or DED (Kilkeel), county (Down), and year (1901).  The table displays all and only the residents of house 1 in Aughnahoory, Kilkeel, County Down, in the year 1901.  But what if we wanted a table containing all of the household returns in the DED of Kilkeel for the year 1901, each indexed by townland and by house number?
+This household return is indexed by house number (1), townland or street (Aughnahoory), district electoral division or DED (Kilkeel), county (Down), and year (1901).  Each household return contains information on all of the residents in a particular household in a particular townland or street.
 
-We can use [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to create such a table.  By feeding [this Jupyter Notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Web-Scraping%201901%20and%201911%20Census%20of%20Ireland%20by%20DED.ipynb) the url for a particular DED in a particular year, we can create a giant csv containing all of the census data for that DED in that year.  For instance, when we set the seed url to http://www.census.nationalarchives.ie/pages/1901/Down/Kilkeel/ and run the entire Jupyter Notebook, we wind up with a csv entitled 1901_Down_Kilkeel_raw.csv, containing all of the census information for Kilkeel in 1901.
+But what if we wanted a table combining all of the household returns for a particular DED in a particular year?  For instance, what if we wanted a table containing information on all of the residents of Kilkeel in 1901, not just the residents in house 1 in the townland of Aughnahoory?
+
+We can create such a table with [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).  By feeding [this Jupyter Notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Web-Scraping%201901%20and%201911%20Census%20of%20Ireland%20by%20DED.ipynb) the url for a particular DED in a particular year, we can create a giant csv with all of the census information for that DED in that year.  For instance, when we set the seed url to http://www.census.nationalarchives.ie/pages/1901/Down/Kilkeel/ and run the entire Jupyter Notebook, we create a csv entitled 1901_Down_Kilkeel_raw.csv that contains all of the census information for Kilkeel in 1901.
 
 ## My Data Set
 
-I chose to work the 1911 census data for twelve DEDs roughly centered around Mount Slemish between the towns of Ballymena and Larne in County Antrim:
+I chose to work with 1911 census data for three different regions in Northern Ireland.  Using the method described above, I obtained raw csvs for (i) twelve DEDs roughly centered around Mount Slemish between the towns of Ballymena and Larne in County Antrim:
 
 Red Bay
 Broughshane
@@ -37,7 +39,7 @@ Glencloy
 Carncastle
 Longmore
 
-eleven DEDs covering the coast between the Mourne Mountains and the Irish Sea in County Down:
+(ii) eleven DEDs covering the coast between the Mourne Mountains and the Irish Sea in County Down:
 
 Bryansford
 Fofanny
@@ -51,7 +53,7 @@ Mourne Park
 Killowen
 Rosstrevor
 
-and twenty-two DEDs located on the east side of Lower Lough Erne, north of the town of Enniskillen, along the border of County Fermanagh and County Tyrone:
+and (iii) twenty-two DEDs located on the east side of Lower Lough Erne, north of the town of Enniskillen, along the border of County Fermanagh and County Tyrone:
 
 Ballycassidy
 Ballydoolagh
@@ -76,7 +78,9 @@ Dromore
 Tullyclunagh
 Carryglass
 
-Using the raw csvs obtained with Beautiful Soup, I've created csvs with the combined census data for all of the above listed DEDs for both the [1901 census](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/census_1901_combined.csv) and the [1911 census](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/census_1911_combined.csv).  The DED and Townland or Street columns of these two csv files have already been cleaned to standardize spelling across the two censuses.  Further, the csv for the 1911 census contains census data for the village of Rostrevor that I have personally transcribed from images of household returns; the National Archives was missing transcriptions of those returns.
+After obtaining both 1901 and 1911 census information for each of these DEDs in forty-five raw csvs, I combined the data into two csvs, one for the [1901 census](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/census_1901_combined.csv) and another for the [1911 census](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/census_1911_combined.csv).
+
+To standardize spelling across the two censuses, I manually cleaned the DED and Townland or Street columns of these two csv files.  In addition, I used images of household returns to personally transcribe all of the 1911 census information for the village of Rostrevor, since the website for the National Archives of Ireland was missing transcriptions of those returns.
 
 ## Combining Census Data and Townland Data
 
@@ -84,27 +88,26 @@ Each townland has its own webpage on townlands.ie; here is [an example](https://
 
 ![alt text](Townland_Example.png "Townland Example")
 
-Boundary data for every townland on townlands.ie can be downloaded directly from the site's [download page](https://www.townlands.ie/page/download/).  From this massive amount of boundary data, I created a [GeoJSON file](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/townland_boundaries_from_townlands_ie.geojson) that is limited to boundaries for each townland in the forty-five DEDs listed above.  I made two edits to the GeoJSON file to correct boundary data for the townlands of Warren (spanning the parishes of Ardclinis and Layd) and Drumleckney (in the parish of Racavan), both in County Antrim, because each of those townlands had been split into two parts on townlands.ie.
+Boundary data for every townland on townlands.ie can be downloaded directly from the site's [download page](https://www.townlands.ie/page/download/).  From this collection of townland boundary data, I created a [GeoJSON file](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/townland_boundaries_from_townlands_ie.geojson) that contains only the boundary data for each townland in the forty-five DEDs listed above.
 
-In order to integrate the census data and the townland boundary data, we have to match each townland or street in the census data to a townland on townlands.ie.  The census website groups townlands by DED, but not by parish; townlands.ie groups these particular townlands by parish but not by DED.  That fact, coupled with the fact that different townlands within a county can share the same name, makes it difficult to merge the two datasets, and this problem is made worse by variations in spelling across the two datasets.  On top of that, while most household returns are categorized by townland, others are categorized by street, village, town, or harbour.  Census records do not always give the townland in which these streets, villages, towns, or harbours are located, and some of these locations span more than one townland.
+I made two edits to the GeoJSON file to correct boundary data for the townlands of (i) Drumleckney in the parish of Racavan and (ii) Warren in the parishes of Ardclinis and Layd, both in County Antrim, because each of those townlands had been split into two parts on townlands.ie.
 
-[This csv](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/townland_or_street_to_townlands_ie_urls.csv) is my attempt to map each standardized place name in the cleaned census data to a url on townlands.ie.  Given the aforementioned difficulty of mapping streets, villages, towns, and harbours onto towlands, the csv likely contains some errors, and certainly loses some accuracy in its simplifications.
+In order to integrate the census data and the townland boundary data, I had to match each townland or street in the census data to a townland on townlands.ie.  There were a number of obstacles to merging these two datasets.  First, the census website groups the townlands by DED, but not by parish; townlands.ie groups the townlands by parish but not by DED.  Second, different townlands within a county can share the same name.  Third, there are variations in the spelling of place names across the two datasets.  Finally, while most household returns are categorized by townland, others are categorized by street, village, town, or harbour.  Census records do not always give the townland in which these streets, villages, towns, or harbours are located, and some of these locations span more than one townland.
+
+[This csv](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/townland_or_street_to_townlands_ie_urls.csv) contains my attempt to map each standardized place name in the cleaned census data to a townland on townlands.ie.  I had to make some simplifying assumptions to map streets, villages, towns, and harbours onto townlands, and some accuracy is inevitably lost in making those simplifying assumptions.
 
 With the census data, the townland boundary data, and a csv to map the former onto the latter, we are ready to begin visualizing the census data.
 
 ## Mapping the Census
 
-By importing both the 1911 census data and the townland boundary data into [this notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Mapping%201911%20Census%20of%20Ireland%20with%20Boundary%20Data%20from%20townlands.ie.ipynb), I can create a dataframe with demographic information for each townland.  The features we can explore include population density, average age, average age by sex, average household size, the number of children born in each household, differences in the size of male and female populations, the percentage of the population who belong to a particular religion, the percentage of the population who speak the Irish language, the percentage of the people above age eighteen who are illiterate, the percentage of married or widowed people under age sixty who are widowed, and the percentage of children decreased.
+By importing both the 1911 census data and the townland boundary data into [this notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Mapping%201911%20Census%20of%20Ireland%20with%20Boundary%20Data%20from%20townlands.ie.ipynb), I created a dataframe with demographic information for each townland.  The demographic information includes data on population density, average age, average age by sex, average household size, the number of children born in each household, differences in the size of male and female populations, the percentage of the population who belong to a particular religion, the percentage of the population who speak the Irish language, the percentage of the people above age eighteen who are illiterate, the percentage of married or widowed people under age sixty who are widowed, and the percentage of children deceased.
 
-I created a correlation matrix to look for correlations between these demographic features.  The most notable correlations I found involved the percentage of people above age eighteen who are illiterate.  This feature has a very strong positive correlation with the average age in a townland, which seems to indicate that the older generations of people alive in 1911 had received less education than the younger generations.
+I created a correlation matrix to look for correlations between each of these demographic features.  The most striking correlations I found all involve the percentage of people above age eighteen who are illiterate.  This feature has a very strong positive correlation with the average age in a townland, suggesting that older generations of people alive in 1911 had received less education than younger generations.
 
-The percentage of the population who identified as Catholic is also positively correlated with adult illiteracy, while the percentages of the population who identified with each of the major Protestant denominations – Presbyterianism, Anglicanism, and Methodism – are all negatively correlated with adult illiteracy.  This negative correlation is most pronounced in the case of Anglicanism.
+The percentage of the population who identified as Catholic is also positively correlated with adult illiteracy, while the percentages of the population who identified as (i) Presbyterian, (ii) Anglican, or (iii) Methodist are all negatively correlated with adult illiteracy.  This negative correlation is more pronounced in the case of Anglicanism than in the case of the other two Protestant denominations.
 
 [The notebook](https://github.com/nrvanwyck/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Mapping%201911%20Census%20of%20Ireland%20with%20Boundary%20Data%20from%20townlands.ie.ipynb) shows how to create visualizations of this demographic information with [Folium](https://github.com/python-visualization/folium) choropleth maps.  We can see that the correlation between age and illiteracy and the correlations between religion and illiteracy are most pronounced in the area around the Mourne Mountains in County Down, and least pronounced in the area around Mount Slemish in County Antrim:
 
 ![alt text](Northern_Ireland_1911_Percentage_of_Adult_Illiteracy_gif.gif "Percentage of Adult Illiteracy gif")
 
-All of this just scratches the surface of how we might visualize the census data. I have not even attempted to create visualizations to show differences in surname and in occupation across townlands.  Still, I hope this shows that there is a lot of information to be gained by cominbing census data with townland boundary data.
-
-
-
+All of this just scratches the surface of how we might use townland boundary data to visualize the 1901 and 1911 censuses of Ireland.  In the future, I would like to use maps to visualize differences in surnames across different regions, and I would like to add more interactive features to the maps.  But that's all for now!
