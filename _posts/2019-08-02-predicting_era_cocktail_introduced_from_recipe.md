@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Predicting the Era in Which Cocktails Were Introduced from Their Recipes
+title: Guessing Cocktail Eras from Recipes
 gh-repo: daattali/beautiful-jekyll
 gh-badge: [star, fork, follow]
 tags: [test]
