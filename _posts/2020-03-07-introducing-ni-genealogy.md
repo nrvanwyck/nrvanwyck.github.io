@@ -2,7 +2,7 @@
 layout: post
 title: Introducing NI Genealogy
 subtitle: A Census Search Tool
-comments: true
+comments: false
 ---
 
 ![alt text](/img/NI-Genealogy_Map.png "NI-Genealogy Map")
