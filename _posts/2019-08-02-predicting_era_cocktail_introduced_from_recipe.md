@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Guessing Cocktail Eras from Recipes
-comments: true
+title: Modeling with Mr. Boston
+subtitle: Guessing Cocktail Eras from Recipes
+comments: false
 ---
 
 The Mr. Boston distillery has [digitized](https://mrbostondrinks.com/discover) eleven editions of its Official Bartender's Guide published between 1935 and 2012. Each edition has its own webpage on which each cocktail recipe featured in that edition is listed; here, for instance, is the webpage for the [1935 edition](https://mrbostondrinks.com/books/old-mr-boston-deluxe-official-bartenders-guide-1935):
