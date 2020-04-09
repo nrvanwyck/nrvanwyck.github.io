@@ -1,10 +1,10 @@
 # --- General options --- #
 
 # Name of website
-title: nrvanwyck
+title: "nrvanwyck"
 
 # Short description of your site
-description: profile of nrvanwyck
+description: "profile of nrvanwyck"
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -73,7 +73,7 @@ social-network-links:
   github: nrvanwyck
 #   twitter: daattali
 #  reddit: yourname
- linkedin: nathan-van-wyck-48586718a
+  linkedin: nathan-van-wyck-48586718a
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
