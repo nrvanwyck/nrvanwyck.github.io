@@ -1,17 +1,17 @@
 # --- General options --- #
 
 # Name of website
-title: My website
+title: nrvanwyck
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: profile of nrvanwyck
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-url: "http://nrvanwyck.github.io/"
+#url: "https://example.com"
 
 # baseurl should be an empty string
 #baseurl: ""
@@ -20,13 +20,15 @@ url: "http://nrvanwyck.github.io/"
 
 # List of links in the navigation bar
 navbar-links:
-  Links:
+#   About Me: "aboutme"
+  Resources:
+    - Github: "https://github.com/nrvanwyck/"
     - LinkedIn: "https://www.linkedin.com/in/nathan-van-wyck-48586718a/"
-    - GitHub: "https://github.com/nrvanwyck"
+  Author's home: "http://nrvanwyck.github.io/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/profile_pic.png"
+avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -58,7 +60,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Nathan Van Wyck
+  name: nrvanwyck
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -66,10 +68,12 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
+#   email: "someone@example.com"
+#   facebook: deanattali
   github: nrvanwyck
+#   twitter: daattali
 #  reddit: yourname
-#  google-plus: +DeanAttali
- linkedin: https://www.linkedin.com/in/nathan-van-wyck-48586718a/
+ linkedin: nathan-van-wyck-48586718a
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -85,10 +89,9 @@ social-network-links:
 share-links-active:
   twitter: false
   facebook: false
-  google: false
   github: true
   linkedin: true
-  
+
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
 # url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
@@ -118,22 +121,28 @@ share-links-active:
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 # disqus: ""
 
-# If you want to use JustComments fill with the API Key
-#just-comments: "ABCD-EFGH-IJKL"
-
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
 
-# Staticman support
+# To use Staticman comments, fill in repository, branch, and endpoint
 staticman:
   repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
-  branch     : # eg. "master" If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
-  endpoint   : # URL of your own deployment (with trailing slash) (will fallback to a public GitLab instance)
+  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
+  endpoint   : # URL of your own deployment, with a trailing slash (will fallback to a public GitLab instance) eg. https://<your-api>/v3/entry/github/
   reCaptcha:
-    # reCaptcha for Staticman (OPTIONAL)
+    # reCaptcha for Staticman (OPTIONAL, but recommended for spam protection)
     # If you use reCaptcha, you must also set these parameters in staticman.yml
     siteKey  : # Use your own site key, you need to apply for one on Google
     secret   : # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
+
+# To use Utterances comments: (1) fill in repository (make sure the repository is public), (2) Enable Issues in your repository, (3) Install the Utterances app in your repository https://github.com/apps/utterances
+# See more details about the parameters below at https://utteranc.es/
+utterances:
+  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
+  issue-term: title   # Mapping between blog posts and GitHub issues
+  theme: github-light # Utterances theme
+  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
+
 
 # --- Misc --- #
 
@@ -147,6 +156,9 @@ excerpt_length: 50
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
 title-separator: "-"
+
+# Ruby Date Format
+date_format: "%B %-d, %Y"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
