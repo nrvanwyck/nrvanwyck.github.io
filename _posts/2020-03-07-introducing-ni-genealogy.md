@@ -2,10 +2,8 @@
 layout: post
 title: Introducing NI Genealogy
 subtitle: A Census Search Tool
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
 tags: [test]
-comments: false
+comments: true
 ---
 
 ![alt text](/img/NI-Genealogy_Map.png "NI-Genealogy Map")
