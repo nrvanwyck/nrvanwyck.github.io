@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing the 1911 Census of Ireland
 subtitle: Mapping by Townland with Folium
-comments: true
+comments: false
 ---
 
 The National Archives of Ireland has made both the 1901 and 1911 Census of Ireland publicly available on their [website](http://www.census.nationalarchives.ie/).  In both censuses, each household return is indexed by townland or street.  By combining census data with townland boundary data available on [townlands.ie](https://www.townlands.ie/), we can create maps that can help us visualize the censuses.
