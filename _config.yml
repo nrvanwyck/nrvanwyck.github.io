@@ -1,10 +1,10 @@
 # --- General options --- #
 
 # Name of website
-title: "nrvanwyck"
+title: "Nathan Van Wyck"
 
 # Short description of your site
-description: "profile of nrvanwyck"
+description: "Posts by Nathan Van Wyck"
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
