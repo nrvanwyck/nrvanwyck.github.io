@@ -2,7 +2,6 @@
 layout: post
 title: Introducing NI Genealogy
 subtitle: A Census Search Tool
-tags: [test]
 comments: true
 ---
 
