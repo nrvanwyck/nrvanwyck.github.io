@@ -2,7 +2,6 @@
 layout: post
 title: Visualizing the 1911 Census of Ireland
 subtitle: Mapping by Townland with Folium
-tags: [test]
 comments: true
 ---
 
