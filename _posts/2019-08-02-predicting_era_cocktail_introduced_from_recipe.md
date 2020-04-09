@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Guessing Cocktail Eras from Recipes
-tags: [test]
 comments: true
 ---
 
