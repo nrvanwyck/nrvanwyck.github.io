@@ -2,8 +2,6 @@
 layout: post
 title: Visualizing the 1911 Census of Ireland
 subtitle: Mapping by Townland with Folium
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
 ---
